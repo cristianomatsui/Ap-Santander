@@ -1,0 +1,284 @@
+\documentclass{beamer}
+
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  %\usetheme{Frankfurt}       % or try default, Darmstadt, Warsaw, ...
+  %\usetheme{Malmoe}
+  \usetheme{AnnArbor}
+  \usecolortheme{beaver}
+  \usefonttheme{serif}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamercolor{titlelike}{parent=structure,bg=gray!20}
+} 
+
+\usepackage[brazil,portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{chemfig}
+\usepackage[version=3]{mhchem}
+\usepackage{wrapfig}
+\usepackage[caption = false]{subfig}
+\usepackage{floatflt,graphicx}
+% On Overleaf, these lines give you sharper preview images.
+% You might want to `comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\makeatletter
+\long\def\beamer@author[#1]#2{%
+  \def\insertauthor{\def\inst{\beamer@insttitle}\def\and{\beamer@andtitle}%
+  \begin{tabular}{l}#2\end{tabular}}%
+  \def\beamer@shortauthor{#1}%
+  \ifbeamer@autopdfinfo%
+    \def\beamer@andstripped{}%
+    \beamer@stripands#1 \and\relax
+    {\let\inst=\@gobble\let\thanks=\@gobble\def\and{, }\hypersetup{pdfauthor={\beamer@andstripped}}}
+  \fi%
+}
+\makeatother
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+
+\institute{Santander Engineer Experience 2019\\Pitch Day}
+\title{Desafio de Negócio}
+
+\author{
+Cristiano José Mendes Matsui\\
+}
+\date{27 de Março de 2019}
+
+\begin{document}
+
+\captionsetup[subfigure]{labelformat=empty}
+
+\begin{frame}[plain]
+     \vfill
+     \centering
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{institute}
+        \usebeamerfont{institute}\insertinstitute
+     \end{beamercolorbox}
+
+     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{title}
+        \usebeamerfont{title}\inserttitle\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+     \end{beamercolorbox}%
+
+     \vskip1em\par
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{author}
+        \usebeamerfont{author}\insertauthor
+     \end{beamercolorbox}
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{date}
+        \usebeamerfont{date}\insertdate
+     \end{beamercolorbox}\vskip0.5em
+
+    \end{frame}
+\author{Cristiano Mendes Matsui}
+\institute{}
+\title{Desafio de Negócio}
+% These three lines create an automatically generated table of contents.
+
+\section{Apresentação}
+
+
+\begin{frame}{Formação}
+ 
+ \begin{itemize}
+  \item Engenheiro de Computação\\
+    \begin{itemize}
+      \item[] Universidade Tecnológica Federal do Paraná - UTFPR
+      \item[] Campus Pato Branco\newline
+      \begin{itemize}
+	 \item[] Início: Mar/2014
+	  \item[] Término: Dez/2018\newline
+      \end{itemize}
+      \item[] 
+    
+    \end{itemize}
+    
+ \end{itemize}
+
+ 
+\end{frame}
+
+\begin{frame}{Experiências Acadêmicas}
+ 
+  \begin{itemize}
+   \item Instrutor de Curso
+      \begin{itemize}
+	\item[] Informática básica para idosos\newline
+      \end{itemize}
+      
+   \item Equipe de Robótica Móvel - PatoBots
+      \begin{itemize}
+	\item[] Capitão da divisão de sumô\newline
+      \end{itemize}
+      
+   \item Bolsista de Monitoria
+      \begin{itemize}
+	\item[] Banco de Dados, Banco de Dados II, Banco de Dados Avançados\newline
+      \end{itemize}
+      
+   \item Estudo Dirigido
+      \begin{itemize}
+	\item[] Processamento de imagens e consultas por similaridade\newline
+      \end{itemize}
+  \end{itemize}
+
+ 
+\end{frame}
+
+\begin{frame}{Experiências Profissionais}
+ 
+ \begin{itemize}
+  \item MobJoy - Campinas/SP
+      \begin{itemize}
+	  \item[] Analista de QA
+	  \begin{itemize}
+	      \item[]Testes de jogos eletrônicos para plataformas mobile
+
+		  \item[] Out/2012 - Mar/2013\newline
+
+	  \end{itemize}
+      \end{itemize}
+  \item Viasoft - Pato Branco/PR
+      \begin{itemize}
+	  \item[] Analista de Programação
+	  \begin{itemize}
+	      \item[]Testes unitários e programação full-stack de ERPs
+
+		  \item[] Fev/2019 - Atualmente
+	  \end{itemize}
+      \end{itemize}
+
+ \end{itemize}
+
+ 
+\end{frame}
+
+\section{Desafio do Negócio}
+\begin{frame}{Desafio do Negócio}
+ \center \textit{Quais são as características do Banco do futuro e como o Santander deve se preparar para chegar lá?}
+\end{frame}
+
+\section{Banco do Futuro}
+
+\begin{frame}
+    \begin{itemize}
+     \item[] \textbf{O Banco do Futuro}\newline
+	\begin{itemize}
+	  \item[] Atratividade
+	  \begin{itemize}
+	   \item[] \textit{O que difere o meu banco dos outros?}\newline
+	  \end{itemize}
+
+	  \item[] Tecnologia
+	    \begin{itemize}
+	      \item[] \textit{Fintechs}\newline
+	    \end{itemize}
+	    
+	 \item[] Integração
+	    \begin{itemize}
+	      \item[] \textit{One platform to rule them all}\newline
+	    \end{itemize}
+	    
+	 \item[] Agilidade
+	    \begin{itemize}
+	      \item[] \textit{O imediatamente já é tarde demais}
+	    \end{itemize}
+	\end {itemize}
+    \end{itemize}
+
+\end{frame}
+
+\section{Como chegar lá?}
+
+\begin{frame}
+ 
+    \begin{itemize}
+     \item[] \textbf{Mas como chegar lá?}\newline
+
+	\begin{itemize}
+	  \item[] Pensamento "out-of-the-box"
+	  \begin{itemize}
+	      \item[] \textit{Não há progresso sem riscos}\newline
+	  \end{itemize}
+	  \item[] Investimento em novas tecnologias
+	   \begin{itemize}
+	      \item[] \textit{Machine Learning, Blockchain, Data Science}\newline
+	   \end{itemize}
+	  \item[] Caminhar com o mundo atual 
+	    \begin{itemize}
+		\item[] \textit{Cautela com a transição}\newline
+	    \end{itemize}
+	 \item[] Banco Ativo x Banco Reativo
+	    \begin{itemize}
+		\item[] \textit{Estar sempre três passos à frente do cliente}
+	    \end{itemize}
+	   
+	\end{itemize}
+
+
+    \end{itemize}
+
+ 
+\end{frame}
+
+
+
+
+
+\institute{Santander Engineer Experience 2019\\Pitch Day}
+\title{Desafio de Negócio}
+
+\author{
+Cristiano José Mendes Matsui\\
+}
+\date{27 de Março de 2019}
+
+
+
+\begin{frame}[plain]
+     \vfill
+     \centering
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{institute}
+        \usebeamerfont{institute}\insertinstitute
+     \end{beamercolorbox}
+
+     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{title}
+        \usebeamerfont{title}\inserttitle\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+     \end{beamercolorbox}%
+
+     \vskip1em\par
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{author}
+        \usebeamerfont{author}\insertauthor
+     \end{beamercolorbox}
+
+     \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{date}
+        \usebeamerfont{date}\insertdate
+     \end{beamercolorbox}\vskip0.5em
+
+    \end{frame}
+
+\end{document}
