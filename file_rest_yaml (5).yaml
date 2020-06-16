@@ -1,0 +1,104 @@
+openapi: 3.0.1
+info:
+  title: Verify Signature
+  description: Arsenal service that verify signatures
+  version: 4.0.0
+servers:
+- url: /system-security/v4
+tags:
+- name: verify-signature-controller
+  description: Verify Signature Controller
+paths:
+  /api/v1/verify:
+    post:
+      tags:
+      - verify-signature-controller
+      summary: Verify the signature of the especified System.
+      operationId: verifyUsingPOST
+      parameters:
+      - name: login
+        in: header
+        description: Login received from ZUP.
+        required: true
+        schema:
+          type: string
+        example: x235363
+      requestBody:
+        description: Object with signature request to validate.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifySignatureServiceResponseDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/VerifySignatureResponseDTO'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      security:
+      - Bearer Token (JWT):
+        - global
+      x-codegen-request-body-name: signatureRequest
+components:
+  schemas:
+    PEMVerifySignatureResponse:
+      title: PEMVerifySignatureResponse
+      type: object
+      properties:
+        message:
+          type: string
+        retCode:
+          type: integer
+          format: int32
+    VerifySignatureResponseDTO:
+      title: VerifySignatureResponseDTO
+      type: object
+      properties:
+        internalAuthentication:
+          type: boolean
+        pemVerifySignatureResponse:
+          $ref: '#/components/schemas/PEMVerifySignatureResponse'
+        tokenBKS:
+          type: string
+    VerifySignatureServiceResponseDTO:
+      title: VerifySignatureServiceResponseDTO
+      type: object
+      properties:
+        data:
+          type: string
+          example: dado
+        nonce:
+          type: string
+          example: nonce
+        publicPemContent:
+          type: string
+          example: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAufzWbt3ehzXrAj5fWd2c6dDrAccF/S3dstDdMgw7OFZblCr2K07RVZCaseXxcx5N3Zmg6oKJZrz/XiEDn69hbT3C4ErhC2+p4hYAHdBPR6MYmDxjZ23fcP5ylzM/unIa1FqI6PkuKdy8YP6tka7JJLk6vTO8MP3R5CwJ/nMqxiA9zD7VlrkKLYUpWAHapf61bW5z+7FXcDswGKkst6/cpzDB+FxzeKzb/HF2QY7ccwnm5hXvBYFGCa9NCXUY26ww1pijXqjvQ/5V5xe1RVR7QzJIddsnbv3qDBKXg/dNkzwp4fRkHwQuV6UA3sU+cpq+61VLolCqkpECsiCZp4p83wIDAQAB
+        signature:
+          type: string
+          example: e2J/AdXbT25TqPi5zML8DXpCbm9WT+x6COb4t/AzsikJlXkFUtQ9JnHsZ+v/EDnch5d195TczF2cOw0tB9BOgRxNA6J7Ub0Uws2tGN+mzSTnAgihpXRsq3fYdx4uw/xv/zJ8AI9DqC6zrTqu2T81aVLNWRmh8pnYeEihev2JYVaiSaW9tCaTXGCEWiF2TRF2LwE5NGs02T7c8DIY7e8QrergDqB8wJtO2mMM0VRZov4PS38MH2R08q7rPeKGTDfbwyZ47vnmebvNEp2yBzmONoXx2rI19RoXUuy/k37sYwA0r1Hi1ZNSrBFuKw1wRH4oRSBwsjJGW2eGC7Olx6RjkQ==
+        system:
+          type: string
+          example: lgl
+        timestamp:
+          type: string
+          example: "0"
+  securitySchemes:
+    Bearer Token (JWT):
+      type: apiKey
+      name: Authorization
+      in: header
