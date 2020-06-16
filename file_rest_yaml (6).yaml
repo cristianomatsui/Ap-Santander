@@ -1,0 +1,701 @@
+openapi: 3.0.1
+info:
+  title: Api Documentation
+  description: Api Documentation
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+  version: 1.0.0
+servers:
+- url: /bff-osa-acquisition-fraud-management/v1
+tags:
+- name: channel-controller
+  description: Channel Controller
+- name: product-controller
+  description: Product Controller
+- name: transaction-controller
+  description: Transaction Controller
+paths:
+  /channels:
+    get:
+      tags:
+      - channel-controller
+      summary: findAll
+      operationId: findAllUsingGET
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    post:
+      tags:
+      - channel-controller
+      summary: save
+      operationId: saveUsingPOST
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+  /channels/{id}:
+    get:
+      tags:
+      - channel-controller
+      summary: findById
+      operationId: findByIdUsingGET
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    put:
+      tags:
+      - channel-controller
+      summary: update
+      operationId: updateUsingPUT
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChannelRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+    delete:
+      tags:
+      - channel-controller
+      summary: delete
+      operationId: deleteUsingDELETE
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "204":
+          description: No Content
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+      deprecated: false
+  /products:
+    get:
+      tags:
+      - product-controller
+      summary: findAll
+      operationId: findAllUsingGET_1
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    post:
+      tags:
+      - product-controller
+      summary: save
+      operationId: saveUsingPOST_1
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+  /products/{id}:
+    get:
+      tags:
+      - product-controller
+      summary: findById
+      operationId: findByIdUsingGET_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    put:
+      tags:
+      - product-controller
+      summary: update
+      operationId: updateUsingPUT_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+    delete:
+      tags:
+      - product-controller
+      summary: delete
+      operationId: deleteUsingDELETE_1
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "204":
+          description: No Content
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+      deprecated: false
+  /products/{id}/channels:
+    put:
+      tags:
+      - product-controller
+      summary: updateProductChannelsAssociation
+      operationId: updateProductChannelsAssociationUsingPUT
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductChannelsRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+    post:
+      tags:
+      - product-controller
+      summary: productChannelsAssociation
+      operationId: productChannelsAssociationUsingPOST
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductChannelsRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+  /transactions:
+    get:
+      tags:
+      - transaction-controller
+      summary: findAll
+      operationId: findAllUsingGET_2
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    post:
+      tags:
+      - transaction-controller
+      summary: save
+      operationId: saveUsingPOST_2
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+  /transactions/{id}:
+    get:
+      tags:
+      - transaction-controller
+      summary: findById
+      operationId: findByIdUsingGET_2
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+    put:
+      tags:
+      - transaction-controller
+      summary: update
+      operationId: updateUsingPUT_2
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "201":
+          description: Created
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+        "404":
+          description: Not Found
+          content: {}
+      deprecated: false
+      x-codegen-request-body-name: request
+    delete:
+      tags:
+      - transaction-controller
+      summary: delete
+      operationId: deleteUsingDELETE_2
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        x-santander-security-cdo-level: Confidential
+        x-santander-security-encrypt-type: Normal
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+        "204":
+          description: No Content
+          content: {}
+        "401":
+          description: Unauthorized
+          content: {}
+        "403":
+          description: Forbidden
+          content: {}
+      deprecated: false
+components:
+  schemas:
+    ChannelRequest:
+      title: ChannelRequest
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        name:
+          type: string
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+    ChannelsDto:
+      title: ChannelsDto
+      type: object
+      properties:
+        channelId:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+    HttpResponse:
+      title: HttpResponse
+      type: object
+      properties:
+        alert:
+          type: string
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        code:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        data:
+          type: object
+          properties: {}
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        success:
+          type: boolean
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+    ProductChannelsRequest:
+      title: ProductChannelsRequest
+      type: object
+      properties:
+        channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChannelsDto'
+    ProductRequest:
+      title: ProductRequest
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        name:
+          type: string
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+    TransactionRequest:
+      title: TransactionRequest
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
+        name:
+          type: string
+          x-santander-security-cdo-level: Confidential
+          x-santander-security-encrypt-type: Normal
